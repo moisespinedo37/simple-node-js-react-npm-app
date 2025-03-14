@@ -5,6 +5,7 @@ pipeline {
     tools {
         nodejs 'NodeJS'
     }
+
     stages {
         stage('Build') {
             steps{
@@ -12,6 +13,15 @@ pipeline {
             }
 
         }
+
+    stage('Test') {
+            steps{
+                sh './jenkins/scripts/test.sh'
+            }
+
+
+        }
+
     }
 
 }
